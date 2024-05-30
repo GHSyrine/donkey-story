@@ -1,0 +1,14 @@
+
+<div class="col-md-3">
+  <div class="sticky-top" style="top: 20px;">
+    <h4 class="text-center my-4">Your Donkeys</h4>
+    <div class="list-group">
+      <div class="list-group-item">
+        @for(donkey of userDonkeys; track donkey.image){
+        <img [src]="donkey.image" alt="{{ donkey.name }}" class="img-fluid">
+        }
+      </div>
+    </div>
+  </div>
+</div>
+

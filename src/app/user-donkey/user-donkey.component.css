@@ -1,0 +1,16 @@
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.list-group-item {
+  border: none;
+  padding: 10px 0;
+}
+
+.list-group-item img {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 100%;
+}

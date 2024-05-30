@@ -1,0 +1,47 @@
+<p>create-donkey works!</p>
+<form [formGroup]="addDonkeyForm" (submit)="onSubmit()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nom</label>
+    <input type="text" formControlName="name" id="name">
+  </div>
+  @if (isNameInValid()){
+    @if (addDonkeyForm.controls.name.errors?.['required']) {
+      <div>Name is required</div>
+    }
+  }
+
+
+  <div class="mb-3">
+    <label for="origine" class="form-label">Origine</label>
+    <input type="text" formControlName="origine" id="origine">
+  </div>
+  @if (isOrigineInValid()){
+    @if (addDonkeyForm.controls.origine.errors?.['required']) {
+      <div>Origin is required</div>
+    }
+  }
+
+  <div class="mb-3">
+    <label for="birthDate" class="form-label">Date de naissance</label>
+    <input type="date" formControlName="birthDate" id="birth">
+  </div>
+  @if (isBirthdateInValid()){
+    @if (addDonkeyForm.controls.birthDate.errors?.['required']) {
+      <div>BirthDate is required</div>
+    }
+  }
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Image</label>
+    <input type="url" formControlName="image" id="image">
+  </div>
+  <div class ="text danger">
+     @if (isImageInValid()){
+    @if (addDonkeyForm.controls.image.errors?.['required']) {
+      <div>image is required</div>
+    }
+  }
+
+</div>
+  <button type="submit" class="btn btn-primary" [appFormIsValid]="addDonkeyForm" validClass="btn-success" invalidClass="btn-danger">Add Donkey</button>
+</form>
